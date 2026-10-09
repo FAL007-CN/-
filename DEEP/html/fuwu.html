@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/first-1.css" />
+		<script src="../js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: dodgerblue;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: white;"></a>
+			<h1 class="mui-title" style="color: white;">更多服务</h1>
+		</header>
+		
+		<div class="cont">
+			<ul id="Mlistd" class="mui-table-view mui-grid-view mui-grid-9">
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				<a href="#">
+					<span class="mui-icon mui-icon-home"></span>
+					<div class="mui-media-body">Home</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				<a href="#">
+					<span class="mui-icon mui-icon-email"><span class="mui-badge mui-badge-red">5</span></span>
+					<div class="mui-media-body">Email</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				<a href="#">
+					<span class="mui-icon mui-icon-chatbubble"></span>
+					<div class="mui-media-body">Chat</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				<a href="#">
+					<span class="mui-icon mui-icon-location"></span>
+					<div class="mui-media-body">Location</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				<a href="#">
+					<span class="mui-icon mui-icon-search"></span>
+					<div class="mui-media-body">Search</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				<a href="#">
+					<img src="" alt=""  />
+					<div class="mui-media-body">Phone</div>
+				</a>
+			</li>
+				</ul>
+			
+		</div>
+	</body>
+	<script>
+		var baseUrl = 'http://124.93.196.45:10091/prod-api';
+		var imgApi = 'http://124.93.196.45:10091';
+		var fuwuApi = '/api/service/list';
+		
+		mui.ajax(baseUrl+fuwuApi,{
+			data:{
+				sort:'1'
+			},
+			dataType:'json',//服务器返回json格式数据
+			type:'get',//HTTP请求类型
+			contentType: 'application/x-www-form-urlencoded',
+			timeout:10000,//超时时间设置为10秒；
+			success:function(data){
+				console.log(data);
+				
+				var MlistdHTML = '';
+				
+				for (var i = 0; i <  data.rows.length; i++) {
+					
+					MlistdHTML += `
+					
+						<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+							<a href="#">
+								<img src="${imgApi +data.rows[i].imgUrl}" alt="" style="height: 60px; width: 60px;"/>
+								<div class="mui-media-body">${data.rows[i].serviceName}</div>
+							</a>
+						</li>
+					
+					`;
+					
+				}
+				
+				document.getElementById("Mlistd").innerHTML = MlistdHTML;
+				
+				
+			},
+			error:function(xhr,type,errorThrown){
+				
+			}
+		});
+		
+		
+	</script>
+</html>

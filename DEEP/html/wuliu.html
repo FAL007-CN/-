@@ -1,0 +1,413 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/first-1.css" />
+		<script src="../js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: dodgerblue;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: white;"></a>
+			<h1 class="mui-title" style="color: white;">物流</h1>
+		</header>
+		<div class="wuliu-cont">
+			<div class="mui-input-row mui-search">
+				<input id="searchIN" type="search" class="mui-input-clear" placeholder="请输入物流单号">
+			</div>
+
+
+			<div id="slider" class="mui-slider">
+				<div id="mslider" class="mui-slider-group mui-slider-loop">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="../images/04.jpg">
+						</a>
+					</div>
+					<!-- 第一张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/01.jpg">
+							<p class="mui-slider-title">123</p>
+						</a>
+					</div>
+					<!-- 第二张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/02.jpg">
+						</a>
+					</div>
+					<!-- 第三张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/03.jpg">
+						</a>
+					</div>
+					<!-- 第四张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/04.jpg">
+						</a>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="../images/01.jpg">
+						</a>
+					</div>
+				</div>
+				<div id="msliderD" class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+
+			<div class="wuliu">
+				物流公司推荐
+			</div>
+
+			<div class="glld">
+				<ul id="mGrid" class="mui-table-view mui-grid-view mui-grid-9">
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+						<a href="">
+							<span class="mui-icon mui-icon-home"></span>
+							<div class="mui-media-body">Home</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+						<a href="#">
+							<span class="mui-icon mui-icon-email"><span class="mui-badge mui-badge-red">5</span></span>
+							<div class="mui-media-body">Email</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+						<a href="#">
+							<span class="mui-icon mui-icon-chatbubble"></span>
+							<div class="mui-media-body">Chat</div>
+						</a>
+					</li>
+
+
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+						<a href="#">
+							<img src="" alt="" />
+							<div class="mui-media-body">Phone</div>
+						</a>
+					</li>
+				</ul>
+
+
+
+			</div>
+
+			<div class="paixu">
+				其他物流公司
+			</div>
+
+			<div class="pxlist" style="display: flex;">
+				<div id="px1" class="mui-input-row mui-checkbox mui-left">
+					<label>Z-A排序</label>
+					<input name="checkbox1" type="checkbox" checked>
+				</div>
+				<div id="px2" class="mui-input-row mui-checkbox mui-left">
+					<label>A-Z排序</label>
+					<input name="checkbox1" type="checkbox">
+				</div>
+			</div>
+			<ul id="WLlist" class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						UPS
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						Item 2
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						Item 3
+					</a>
+				</li>
+			</ul>
+		</div>
+
+
+	</body>
+	</style>
+	<script>
+		mui(".glld").on("tap",".mui-table-view-cell",function() {
+			mui.openWindow({
+				url:"wuliuxiangqing.html"
+			})
+		})
+		
+		var pxList;
+		var baseUrl = 'http://124.93.196.45:10091/prod-api/api';
+		var imgApi = 'http://124.93.196.45:10091';
+		var wuliuApi = '/logistics-inquiry/ad-banner/list';
+		var gridApi = '/logistics-inquiry/logistics_company/list';
+		var token = localStorage.getItem('token'); //取用token
+		console.log(token);
+
+
+		//物流动态轮播图
+		mui.ajax(baseUrl + wuliuApi, {
+			data: {
+
+			},
+			headers: {
+				'Authorization': token
+			}, //调用token
+			dataType: 'json', //服务器返回json格式数据
+			type: 'get', //HTTP请求类型
+			timeout: 10000, //超时时间设置为10秒；
+			success: function(data) {
+				console.log(data);
+
+				var msliderHTML = '';
+
+				//第一个节点是最后一张轮播
+				msliderHTML += `
+				
+					<div class="mui-slider-item mui-slider-item-duplicate">
+					  <a href="#">
+						<img src="${imgApi + data.data[data.data.length-1].imgUrl}">
+						<p class="mui-slider-title">${data.data[data.data.length-1].title}</p>
+					  </a>
+					</div>
+				
+				`;
+
+				//中间部分
+				for (var i = 0; i < data.data.length; i++) {
+
+					msliderHTML += `
+					
+						<div class="mui-slider-item">
+						  <a href="#">
+							<img src="${imgApi + data.data[i].imgUrl}">
+							<p class="mui-slider-title">${data.data[i].title}</p>
+						  </a>
+						</div>
+					
+					`;
+				}
+
+				//最后一个节点是第一张轮播，索引从零开始
+
+				msliderHTML += `
+				
+					<div class="mui-slider-item mui-slider-item-duplicate">
+					  <a href="#">
+						<img src="${imgApi + data.data[0].imgUrl}">
+						<p class="mui-slider-title">${data.data[0].title}</p>
+					  </a>
+					</div>
+				
+				
+				`;
+				document.getElementById("mslider").innerHTML = msliderHTML;
+
+				//轮播图下方小点
+
+				var msliderDHTML = `<div class="mui-indicator mui-active"></div>`;
+
+				for (var i = 0; i < data.data.length - 1; i++) {
+
+					msliderDHTML += `
+					
+						<div class="mui-indicator"></div>
+					
+					`;
+
+				}
+
+				document.getElementById("msliderD").innerHTML = msliderDHTML;
+
+				mui('.mui-slider').slider({
+					interval: 2000 // 自动轮播间隔，单位ms
+				});
+
+			},
+			error: function(xhr, type, errorThrown) {
+
+			}
+		});
+
+
+		//物流公司
+		mui.ajax(baseUrl + gridApi, {
+			data: {
+
+			},
+			headers: {
+				'Authorization': token
+			},
+			dataType: 'json', //服务器返回json格式数据
+			type: 'get', //HTTP请求类型
+			timeout: 10000, //超时时间设置为10秒；
+			success: function(data) {
+				console.log(data);
+
+				var mGridHTML = '';
+
+				for (var i = 0; i < 12; i++) {
+
+					mGridHTML += `
+					
+						<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+							<a href="wuliuxiangqing.html">
+								<img src="${imgApi + data.data[i].imgUrl}" alt=""  style="height:35px; width:35px;"/>
+								<div class="mui-media-body">${data.data[i].name}</div>
+							</a>
+						</li>
+					
+					`;
+
+				}
+
+				document.getElementById("mGrid").innerHTML = mGridHTML;
+
+			},
+			error: function(xhr, type, errorThrown) {
+
+			}
+		});
+		
+		//其他物流公司列表
+		mui.ajax(baseUrl + gridApi,{
+			data:{
+				
+			},
+			headers: {
+				'Authorization': token
+			},
+			dataType:'json',//服务器返回json格式数据
+			type:'get',//HTTP请求类型
+			timeout:10000,//超时时间设置为10秒；
+			success:function(data){
+				console.log(data);
+				pxList = data;
+				data.data.sort(function(x,y){
+					return y .name.localeCompare(x.name);
+				});
+				
+				var WLlistHTML = '';
+				
+				for (var c = 0; c < data.data.length; c++) {
+					
+					WLlistHTML += `
+						
+						<li class="mui-table-view-cell">
+							<a>
+								${data.data[c].name}
+							</a>
+						</li>
+					
+					`;
+				
+				}
+				
+				document.getElementById('WLlist').innerHTML = WLlistHTML;
+			},
+			error:function(xhr,type,errorThrown){
+				
+			}
+		});
+		
+		//Z-A排序
+		
+		document.getElementById('px1').addEventListener('tap',function(){
+			// Z-A排序
+			pxList.data.sort(function(x,y){
+				return y .name.localeCompare(x.name);
+				
+			});
+			
+			var WLlistHTML = '';
+			
+			for (var c = 0; c < pxList.data.length; c++) {
+				
+				WLlistHTML += `
+					<li class="mui-table-view-cell">
+						<a>
+							${pxList.data[c].name}
+						</a>
+					</li>	
+				`;
+			
+			}
+			
+			document.getElementById('WLlist').innerHTML = WLlistHTML;
+			
+		});
+		
+		document.getElementById('px2').addEventListener('tap',function(){
+			// A-Z排序
+			pxList.data.sort(function(x,y){
+				return x .name.localeCompare(y.name);
+				
+			}); 
+			
+			var WLlistHTML = '';
+			
+			for (var c = 0; c < pxList.data.length; c++) {
+				
+				WLlistHTML += `
+					<li class="mui-table-view-cell">
+						<a>
+							${pxList.data[c].name}
+						</a>
+					</li>	
+				`;
+			
+			}
+			
+			document.getElementById('WLlist').innerHTML = WLlistHTML;
+			
+		});
+		
+		//物流单号判定
+		//键盘事件
+		document.getElementById('searchIN').addEventListener('keypress',function(e){
+			// console.log(e.keyCode); //获取按键代码
+			// 回车键代码为13
+			if(e.keyCode == 13) {
+				
+				var ydNO = document.getElementById('searchIN').value.trim().toUpperCase();
+				//获取搜索框数据赋值给变量,数据加工：去掉两边空格，字母全部转换为大写
+				console.log(ydNO);
+				//if判断
+				if(!ydNO) {
+					mui.toast('运单号不能为空！')
+					return;
+				}
+				if(!/^[a-z A-Z]{4}\d{8}$/.test(ydNO)) {
+					mui.toast('运单号格式错误！')
+				}
+				
+				// /^[ a-z A-Z] 必须为大小写字母开头 {4}四位数
+				// \d{8} 必须要8位数字
+				console.log('ydsearch.html?dh=' + ydNO);
+				
+				
+			}
+			
+		});
+		
+		
+	</script>
+</html>

@@ -1,0 +1,370 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/first-1.css" />
+		<script src="../js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+
+	<body>
+		<!-- 主界面不动、菜单移动 -->
+		<!-- 侧滑导航根容器 -->
+		<div class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+			<!-- 菜单容器 -->
+			<aside class="mui-off-canvas-left" id="offCanvasSide">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 菜单具体展示内容 -->
+						<div class="list">
+							<div class="li li1" style="color: red;">
+								首页
+							</div>
+							<div class="li li2">
+								物流查询
+							</div>
+							<div class="li li3">
+								个人中心
+							</div>
+							<div class="li li4">
+								退出登录
+							</div>
+						</div>
+					</div>
+				</div>
+			</aside>
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<!-- 主页面标题 -->
+				<header class="mui-bar mui-bar-nav" style="background-color: dodgerblue;">
+					<h1 class="mui-title" style="color: white;">智慧生活</h1>
+				</header>
+
+				<div class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 主界面具体展示内容 -->
+						<div class="const">
+							<div id="slider" class="mui-slider" >
+							  <div id="Mslider" class="mui-slider-group mui-slider-loop">
+								<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+								<div class="mui-slider-item mui-slider-item-duplicate">
+								  <a href="#">
+									<img src=" ">
+								  </a>
+								</div>
+								<!-- 第一张 -->
+								<div class="mui-slider-item">
+								  <a href="#">
+									<img src=" ">
+									<p class="mui-slider-title">111</p>
+								  </a>
+								</div>
+								<!-- 第二张 -->
+								<div class="mui-slider-item">
+								  <a href="#">
+									<img src=" ">
+								  </a>
+								</div>
+								<!-- 第三张 -->
+								<div class="mui-slider-item">
+								  <a href="#">
+									<img src=" ">
+								  </a>
+								</div>
+								<!-- 第四张 -->
+								<div class="mui-slider-item">
+								  <a href="#">
+									<img src=" ">
+								  </a>
+								</div>
+								<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+								<div class="mui-slider-item mui-slider-item-duplicate">
+								  <a href="#">
+									<img src=" ">
+								  </a>
+								</div>
+							  </div>
+							  <div id="msliderD" class="mui-slider-indicator">
+								<div class="mui-indicator mui-active"></div>
+								<div class="mui-indicator"></div>
+								<div class="mui-indicator"></div>
+								<div class="mui-indicator"></div>
+							  </div>
+							</div>
+						</div>
+						
+						<div class="fbar">
+							服务
+						</div>
+						
+						<div class="fuwu" id="mBar">
+							<div class="f f1">
+								<div class="imgs">
+									<img src="../images/01.png" alt="" />
+								</div>
+								<div class="text">
+									1
+								</div>
+							</div>
+							<div class="f f2">
+								<div class="imgs">
+									<img src="../images/01.png" alt="" />
+								</div>
+								<div class="text">
+									2
+								</div>
+							</div>
+							<div class="f f3">
+								<div class="imgs">
+									<img src="../images/01.png" alt="" />
+								</div>
+								<div class="text">
+									3
+								</div>
+							</div>
+							<div class="f f4">
+								<div class="imgs">
+									<img src="../images/01.png" alt="" />
+								</div>
+								<div class="text">
+									4
+								</div>
+							</div>
+							<div class="f f5">
+								<div class="imgs">
+									<img src="../images/01.png" alt="" />
+								</div>
+								<div class="text">
+									5
+								</div>
+							</div>
+						</div>
+						
+						<div class="xinwen">
+							新闻列表
+						</div>
+						
+						
+						<div class="mlist" id="listBar" style="margin-top: 20px;">
+							<div class="bot" style="display: flex;">
+								<div class="mleft">
+									<img src="../images/01.jpg" alt="" srcset="" style="width: 80px; height: 80px;"/>
+								</div>
+								<div class="mright">
+									<span style="font-size: 18px;">以</span>
+									<span class="mui-ellipsis-2" style="color: gray;">2</span>
+									<span class="mui-ellipsis-2">3</span>
+								</div>
+							</div>
+						</div>
+						
+						
+						
+						
+					</div>
+				</div>
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+	</body>
+	<script>
+		mui(".list").on("tap",".li2",function() {
+			mui.openWindow({
+				url:"wuliu.html"
+			})
+		})
+		mui(".list").on("tap",".li3",function() {
+			mui.openWindow({
+				url:"user.html"
+			})
+		})
+		mui(".list").on("tap",".li4",function() {
+			mui.openWindow({
+				url:"../index.html"
+			})
+		})
+		mui(".fuwu").on("tap",".f2",function() {
+			mui.openWindow({
+				url:"fuwu.html"
+			})
+		})
+		
+		var baseUrl = 'http://124.93.196.45:10091/prod-api';
+		var msliderApi = '/api/rotation/list';
+		var imgbaseUrl = 'http://124.93.196.45:10091';
+		var fuwuApi = '/api/service/list';
+		var textApi = '/press/press/list';
+		
+		
+		
+		mui.ajax(baseUrl + msliderApi,{
+			data:{
+				type:'2'
+			},
+			dataType:'json',//服务器返回json格式数据
+			type:'get',//HTTP请求类型
+			timeout:10000,//超时时间设置为10秒；
+			success:function(data){
+				console.log(data);
+				var MsliderHTML = '';
+				
+				
+				//第一个节点是最后一张轮播图
+				MsliderHTML += `
+					
+					<div class="mui-slider-item mui-slider-item-duplicate">
+					  <a href="#">
+						<img src="${imgbaseUrl + data.rows[data.rows.length-1].advImg}">
+						<p class="mui-slider-title">${data.rows[data.rows.length-1].advTitle}</p>
+					  </a>
+					</div>
+				
+				
+				`;
+				
+				
+				for (var i = 0; i<data.rows.length; i++) {
+					
+					MsliderHTML += `
+					
+						<div class="mui-slider-item">
+						  <a href="#">
+							<img src="${imgbaseUrl + data.rows[i].advImg}">
+							<p class="mui-slider-title">${data.rows[i].advTitle}</p>
+						  </a>
+						</div>
+					
+					`;
+					
+				}
+				
+				//第一张轮播图从零开始
+				MsliderHTML += `
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="${ imgbaseUrl + data.rows[0].advImg}">
+							<p class="mui-slider-title">${data.rows[0].advTitle}</p>
+						</a>
+					</div>
+					
+				`;
+				
+				document.getElementById("Mslider").innerHTML = MsliderHTML;
+				
+				var msliderDHMTL = `<div class="mui-indicator mui-active"></div>`;
+				
+				for (var i = 0; i <data.rows.length-1; i++) {
+					msliderDHMTL += `<div class="mui-indicator"></div>`;
+				}
+				
+				document.getElementById("msliderD").innerHTML = msliderDHMTL;
+				
+				mui('.mui-slider').slider({
+				    interval: 2000 // 自动轮播间隔，单位ms
+				});
+			},
+			error:function(xhr,type,errorThrown){
+				
+			}
+		});
+		
+		
+		//服务九宫格
+		mui.ajax(baseUrl + fuwuApi,{
+			data:{
+				sort:'1'
+			},
+			dataType:'json',//服务器返回json格式数据
+			type:'get',//HTTP请求类型
+			contentType: 'application/x-www-form-urlencoded',
+			timeout:10000,//超时时间设置为10秒；
+			success:function(data){
+				console.log(data);
+				var mBarHTML = '';
+				for (var i = 0; i < data.rows.length-20; i++) {
+					
+					mBarHTML += `
+					
+						<div class="f f1">
+							<div class="imgs">
+								<img src="${imgbaseUrl + data.rows[i].imgUrl}" alt="" />
+							</div>
+							<div class="text">
+								${data.rows[i].serviceName}
+							</div>
+						</div>
+					
+					`;
+					
+				}
+				
+				mBarHTML += `
+				
+					<div class="f f2">
+						<div class="imgs">
+							<img src="${imgbaseUrl + data.rows[i].imgUrl}" alt="" />
+						</div>
+						<div class="text">
+							更多服务
+						</div>
+					</div>
+				
+				
+				`;
+				
+				document.getElementById("mBar").innerHTML = mBarHTML;
+				
+			},
+			error:function(xhr,type,errorThrown){
+				
+			}
+		});
+		
+		//新闻列表
+		mui.ajax(baseUrl + textApi,{
+			data:{
+				type:'9'
+			},
+			dataType:'json',//服务器返回json格式数据
+			type:'get',//HTTP请求类型
+			timeout:10000,//超时时间设置为10秒；
+			success:function(data){
+				console.log(data);
+				
+				var listBarHTML = '';
+				
+				for (var b = 0; b <4; b++) {
+					listBarHTML += `
+					
+						<div class="bot" style="display: flex; ">
+							<div class="mleft">
+								<img src="${imgbaseUrl + data.rows[b].cover}" alt="" srcset="" style="width: 100px; height: 100px;"/>
+							</div>
+							<div class="mright">
+								<span style="font-size: 16px;">${data.rows[b].title}</span>
+								<span class="mui-ellipsis-2">${data.rows[b].content}</span>
+							</div>
+						</div>
+					
+					
+					`;
+				}
+				
+				document.getElementById("listBar").innerHTML = listBarHTML;
+				
+				
+			},
+			error:function(xhr,type,errorThrown){
+				
+			}
+		});
+		
+	</script>
+</html>

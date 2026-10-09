@@ -1,0 +1,274 @@
+/* ============================================================
+   DEEP 智慧生活 —— 全站统一样式表
+   说明：本文件集中管理所有页面的样式，各页面通过 <link> 引入。
+   分区：首页 first.html / 服务 fuwu.html / 个人中心 user.html /
+         物流 wuliu.html / 物流详情 wuliuxiangqing.html
+   ============================================================ */
+
+/* ============================================================
+   一、首页 first.html
+   ============================================================ */
+
+/* 侧滑菜单的列表 */
+.list {
+    line-height: 70px;
+    margin-top: 100px;
+    text-align: center;
+    color: white;
+    font-size: 22px;
+}
+
+/* 首页轮播图 */
+.const .mui-slider-item img {
+    height: 200px;
+}
+
+/* 顶部栏（"便民服务"标题那条） */
+.fbar {
+    color: dodgerblue;
+    margin-top: 30px;
+    font-weight: 600;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+/* 便民服务图标区（5 个圆形图标一排） */
+.fuwu {
+    margin-top: 10px;
+    display: flex;
+}
+
+/* 每个图标占 1/5 宽度 */
+.fuwu .f {
+    width: 20%;
+    flex-shrink: 0;
+}
+
+/* 图标圆形框，60px 见方，居中 */
+.fuwu .f .imgs {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+}
+
+/* 图标图片：填满圆框、裁切不变形、做成圆形 */
+.fuwu .f .imgs img {
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+/* 图标下方的文字 */
+.fuwu .f .text {
+    text-align: center;
+    font-size: 16px;
+}
+
+/* 新闻栏标题（"实时资讯"那条） */
+.xinwen {
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 20px;
+    padding-left: 10px;
+    color: dodgerblue;
+}
+
+/* 新闻列表容器 */
+.mlist {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* 每条新闻：左图右文，顶部对齐 */
+.mlist .bot {
+    align-items: flex-start;
+}
+
+/* 左侧图片固定不压缩 */
+.mlist .mleft {
+    flex-shrink: 0;
+}
+
+/* 去掉图片底部的空隙 */
+.mlist .mleft img {
+    display: block;
+}
+
+/* 右侧文字占满剩余宽度 */
+.mlist .mright {
+    flex: 1;
+    min-width: 0;
+    margin-left: 10px;
+}
+
+/* 标题和摘要都独占一行，不再挤在一起 */
+.mlist .mright span {
+    display: block;
+}
+
+/* 摘要：最多显示两行，超出裁掉
+   （新内核用 -webkit-box 显示省略号；旧内核靠 max-height 兜底） */
+.mlist .mright span.mui-ellipsis-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-height: 46px;
+    line-height: 1.4;
+}
+
+
+/* ============================================================
+   二、服务页 fuwu.html
+   ============================================================ */
+
+.cont {
+    margin-top: 50px;
+}
+
+
+/* ============================================================
+   三、个人中心 user.html
+   ============================================================ */
+
+/* 个人中心整体容器（往下推 90px，避开顶部导航栏） */
+.user-cont {
+    margin-top: 90px;
+}
+
+/* 头像区域，居中 */
+.user-cont .top {
+    text-align: center;
+}
+
+/* 个人中心的列表 */
+.user-cont .list {
+    line-height: 40px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+/* 列表每一行下边框 */
+.user-cont .list .mui-table-view-cell {
+    border-bottom: 2px #CCC solid;
+}
+
+
+/* ============================================================
+   四、物流页 wuliu.html
+   ============================================================ */
+
+/* 物流页整体容器 */
+.wuliu-cont {
+    margin-top: 50px;
+}
+
+/* 搜索输入框 */
+.wuliu-cont .mui-input-row {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* 轮播图 */
+.wuliu-cont .mui-slider {
+    margin: 10px 10px 20px 10px ;
+    width: 390px;
+    height: 230px;
+}
+
+/* 轮播图里的图片 */
+.wuliu-cont .mui-slider-item img {
+    height: 200px;
+}
+
+/* "物流公司"标题 */
+.wuliu-cont .wuliu {
+    margin-left: 10px;
+    margin-top: 20px;
+    border-left: 5px dodgerblue solid;
+    color: dodgerblue;
+    padding-left: 5px;
+}
+
+/* 公司列表 */
+.wuliu-cont .glld {
+    margin-top: 10px;
+}
+
+/* "快递公司查询"标题 */
+.wuliu-cont .paixu {
+    margin-left: 10px;
+    padding-left: 10px;
+    color: dodgerblue;
+    border-left: 5px dodgerblue solid;
+}
+
+
+/* ============================================================
+   五、物流详情页 wuliuxiangqing.html
+   ============================================================ */
+
+/* 详情页整体容器 */
+.xiangqing-cont {
+    margin-top: 50px;
+}
+
+/* 顶部大图 */
+.xiangqing-cont .top {
+    border: 1px solid;
+    height: 270px;
+    width: 390px;
+    margin-left: 10px;
+}
+
+/* 顶部大图里的图片 */
+.xiangqing-cont .top img {
+    height: 100%;
+    width: 100%;
+}
+
+/* "物流信息"标题 */
+.xiangqing-cont .center {
+    margin-top: 20px;
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 5px dodgerblue solid;
+    color: dodgerblue;
+}
+
+/* 物流信息正文 */
+.xiangqing-cont .text {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+/* "联系客服"标题 */
+.xiangqing-cont .bot {
+    margin-top: 20px;
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 5px dodgerblue solid;
+    color: dodgerblue;
+}
+
+/* 联系客服内容 */
+.xiangqing-cont .box {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+/* "相关推荐"标题 */
+.xiangqing-cont .bar {
+    margin-top: 20px;
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 5px dodgerblue solid;
+    color: dodgerblue;
+}
+
+/* 推荐内容 */
+.xiangqing-cont .bats {
+    margin-left: 10px;
+    margin-top: 10px;
+}

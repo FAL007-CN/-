@@ -1,0 +1,33 @@
+.cont {
+	margin-top: 80px;
+
+}
+
+.cont .top {
+	text-align: center;
+	border: 2px #ccc solid;
+	height: 170px;
+	width: 250px;
+	margin: 0 auto;
+	border-radius: 10px;
+	padding-top: 60px;
+	color: dodgerblue;
+
+
+}
+
+
+.cont .top .txt1 {
+	font-size: 25px;
+	font-weight: 600;
+}
+
+.cont .top .txt2 {
+	padding-top: 10px;
+	font-size: 20px;
+	font-weight: 550;
+}
+
+.cont .center {
+	margin-top: 40px;
+}

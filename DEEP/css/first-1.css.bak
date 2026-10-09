@@ -1,0 +1,68 @@
+.list{
+			line-height: 70px;
+			margin-top: 100px;
+			text-align: center;
+			color: white;
+			font-size: 22px;
+		}
+		.const{
+			.mui-slider-item img{
+				height: 200px;
+			}
+		}
+		
+		.fbar{
+			color: dodgerblue;
+			margin-top: 30px;
+			font-weight: 600;
+			font-size: 20px;
+			padding-left: 10px;
+			
+		}
+		
+		
+		.fuwu{
+			margin-top: 10px;
+			display: flex;
+			.f{
+				width: 20%;
+				.imgs{
+					height: 20rpx;
+					width: 20rpx;
+					margin: 0 auto;
+					img{
+						height: 100%;
+						width: 100%;
+						border-radius: 100%;
+					}
+				}
+				
+				.text{
+					text-align: center;
+					font-size: 16px;
+				}
+				
+			}
+			
+		}
+		
+		.xinwen{
+			font-weight: 600;
+			font-size: 20px;
+			margin-top: 20px;
+			padding-left: 10px;
+			color: dodgerblue;
+			
+		}
+		
+		.mlist{
+			
+			margin-left: 10px;
+			margin-right: 10px;
+			
+			.mright{
+				
+				margin-left: 10px;
+				height: 120px;
+			}
+		}
