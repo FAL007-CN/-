@@ -1,0 +1,35 @@
+/**
+ * ============================================================================
+ * uni.scss
+ * ----------------------------------------------------------------------------
+ * 全局 SCSS 变量。uni-app 会把这里的变量自动注入到每个 <style lang="scss"> 里，
+ * 所以页面样式里直接用 $dl-primary 就行，不用每个文件 @import。
+ * ============================================================================
+ */
+
+/* 主题色：和原项目一样用 dodgerblue，赛题 App 的主色 */
+$dl-primary: #1e88e5;
+$dl-primary-dark: #1565c0;
+$dl-primary-light: #e3f2fd;
+
+/* 文字 */
+$dl-text: #333333;
+$dl-text-strong: #222222;
+$dl-text-mid: #555555;
+$dl-text-weak: #888888;
+$dl-text-faint: #999999;
+
+/* 背景 / 边框 */
+$dl-bg: #f4f5f7;
+$dl-card: #ffffff;
+$dl-line: #f0f0f0;
+
+/* 语义色 */
+$dl-danger: #e53935;
+$dl-warn: #fb8c00;
+$dl-success: #43a047;
+$dl-gray: #9e9e9e;
+
+/* 圆角 */
+$dl-radius: 16rpx;
+$dl-radius-sm: 8rpx;

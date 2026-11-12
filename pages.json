@@ -1,0 +1,141 @@
+{
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^dl-(.*)": "@/components/dl-$1/dl-$1.vue"
+		}
+	},
+	"pages": [
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "数字生活"
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "数字生活",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/activity/activity",
+			"style": {
+				"navigationBarTitleText": "公益活动",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/study/study",
+			"style": {
+				"navigationBarTitleText": "学习心得"
+			}
+		},
+		{
+			"path": "pages/ai/ai",
+			"style": {
+				"navigationBarTitleText": "AI 助手"
+			}
+		},
+		{
+			"path": "pages/analysis/analysis",
+			"style": {
+				"navigationBarTitleText": "数据分析"
+			}
+		},
+		{
+			"path": "pages/model/model",
+			"style": {
+				"navigationBarTitleText": "楷模列表"
+			}
+		},
+		{
+			"path": "pages/hero/hero",
+			"style": {
+				"navigationBarTitleText": "英雄故事"
+			}
+		},
+		{
+			"path": "pages/hero/detail",
+			"style": {
+				"navigationBarTitleText": "英雄故事详情"
+			}
+		},
+		{
+			"path": "pages/around/around",
+			"style": {
+				"navigationBarTitleText": "身边英雄"
+			}
+		},
+		{
+			"path": "pages/donation/donation",
+			"style": {
+				"navigationBarTitleText": "物资捐赠"
+			}
+		},
+		{
+			"path": "pages/activity/detail",
+			"style": {
+				"navigationBarTitleText": "公益活动详情"
+			}
+		},
+		{
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "个人中心"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "数字生活",
+		"navigationBarBackgroundColor": "#1E88E5",
+		"backgroundColor": "#F4F5F7",
+		"backgroundColorTop": "#F4F5F7",
+		"backgroundColorBottom": "#F4F5F7"
+	},
+	"tabBar": {
+		"color": "#999999",
+		"selectedColor": "#1E88E5",
+		"backgroundColor": "#FFFFFF",
+		"borderStyle": "black",
+		"fontSize": "11px",
+		"iconWidth": "22px",
+		"spacing": "3px",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "static/tabbar/home.png",
+				"selectedIconPath": "static/tabbar/home-on.png"
+			},
+			{
+				"pagePath": "pages/activity/activity",
+				"text": "公益",
+				"iconPath": "static/tabbar/star.png",
+				"selectedIconPath": "static/tabbar/star-on.png"
+			},
+			{
+				"pagePath": "pages/study/study",
+				"text": "心得",
+				"iconPath": "static/tabbar/pen.png",
+				"selectedIconPath": "static/tabbar/pen-on.png"
+			},
+			{
+				"pagePath": "pages/ai/ai",
+				"text": "AI 助手",
+				"iconPath": "static/tabbar/ai.png",
+				"selectedIconPath": "static/tabbar/ai-on.png"
+			},
+			{
+				"pagePath": "pages/analysis/analysis",
+				"text": "数据分析",
+				"iconPath": "static/tabbar/chart.png",
+				"selectedIconPath": "static/tabbar/chart-on.png"
+			}
+		]
+	},
+	"uniIdRouter": {}
+}

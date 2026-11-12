@@ -1,0 +1,290 @@
+/**
+ * ============================================================================
+ * uni.scss
+ * ----------------------------------------------------------------------------
+ * 全局 SCSS 变量。uni-app 会把这里的变量自动注入到每个 <style lang="scss"> 里，
+ * 所以页面样式里直接用 $dl-primary 就行，不用每个文件 @import。
+ * ============================================================================
+ */
+/* 主题色：和原项目一样用 dodgerblue，赛题 App 的主色 */
+/* 文字 */
+/* 背景 / 边框 */
+/* 语义色 */
+/* 圆角 */
+.ai-page[data-v-fdb58938] {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - var(--window-top, 0px) - var(--window-bottom, 0px));
+  background: #eef3f9;
+}
+
+/* ---------------- 顶部 ---------------- */
+.ai-head[data-v-fdb58938] {
+  display: flex;
+  align-items: center;
+  padding: 0.625rem 0.75rem;
+  background: linear-gradient(135deg, #1e88e5, #42a5f5);
+  color: #ffffff;
+}
+.whale[data-v-fdb58938] {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+.ai-head-main[data-v-fdb58938] {
+  flex: 1;
+  min-width: 0;
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.ai-name[data-v-fdb58938] {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.ai-status[data-v-fdb58938] {
+  margin-top: 0.125rem;
+  font-size: 0.625rem;
+  opacity: 0.9;
+}
+.ai-head-btn[data-v-fdb58938] {
+  margin-left: 0.375rem;
+  padding: 0.3125rem 0.625rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.22);
+  font-size: 0.6875rem;
+}
+.ai-head-btn.ghost[data-v-fdb58938] {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------------- 消息 ---------------- */
+.ai-scroll[data-v-fdb58938] {
+  flex: 1;
+  height: 0;
+}
+.msg-list[data-v-fdb58938] {
+  padding: 0.75rem 0.625rem 0.25rem;
+}
+.msg[data-v-fdb58938] {
+  display: flex;
+  margin-bottom: 0.875rem;
+  align-items: flex-start;
+}
+.msg.user[data-v-fdb58938] {
+  flex-direction: row-reverse;
+}
+.avatar[data-v-fdb58938] {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8125rem;
+  color: #ffffff;
+  background: #1e88e5;
+}
+.avatar.user[data-v-fdb58938] {
+  background: #43a047;
+}
+.bubble-wrap[data-v-fdb58938] {
+  max-width: 76%;
+  margin: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.msg.user .bubble-wrap[data-v-fdb58938] {
+  align-items: flex-end;
+}
+.bubble[data-v-fdb58938] {
+  background: #ffffff;
+  border-radius: 0.5625rem;
+  padding: 0.5625rem 0.6875rem;
+  box-shadow: 0 0.0625rem 0.25rem rgba(0, 0, 0, 0.05);
+}
+.msg.user .bubble[data-v-fdb58938] {
+  background: #1e88e5;
+}
+.bubble.err[data-v-fdb58938] {
+  background: #fff3f3;
+  border: 0.0625rem solid #ffcdd2;
+}
+.bubble-text[data-v-fdb58938] {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: #333333;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.msg.user .bubble-text[data-v-fdb58938] {
+  color: #ffffff;
+}
+.caret[data-v-fdb58938] {
+  font-size: 0.8125rem;
+  color: #1e88e5;
+}
+.msg.user .caret[data-v-fdb58938] {
+  color: #ffffff;
+}
+.bubble-tag[data-v-fdb58938] {
+  margin-top: 0.25rem;
+  font-size: 0.625rem;
+  color: #999999;
+}
+.bubble-actions[data-v-fdb58938] {
+  margin-top: 0.25rem;
+}
+.act[data-v-fdb58938] {
+  font-size: 0.6875rem;
+  color: #1e88e5;
+  margin-right: 0.625rem;
+}
+
+/* 工具调用小标签 */
+.tool-row[data-v-fdb58938] {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0.3125rem;
+}
+.tool-chip[data-v-fdb58938] {
+  display: flex;
+  align-items: center;
+  margin: 0 0.3125rem 0.3125rem 0;
+  padding: 0.1875rem 0.5rem;
+  border-radius: 0.625rem;
+  background: rgba(30, 136, 229, 0.1);
+  font-size: 0.625rem;
+  color: #1565c0;
+}
+.tool-dot[data-v-fdb58938] {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  margin-right: 0.25rem;
+  background: #1e88e5;
+}
+.tool-dot.running[data-v-fdb58938] {
+  background: #fb8c00;
+}
+.tool-dot.done[data-v-fdb58938] {
+  background: #43a047;
+}
+
+/* 快捷问题 */
+.quick-wrap[data-v-fdb58938] {
+  margin: 0.3125rem 0 0.625rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.quick-title[data-v-fdb58938] {
+  font-size: 0.6875rem;
+  color: #8899aa;
+  margin-bottom: 0.375rem;
+}
+.quick-chip[data-v-fdb58938] {
+  margin-bottom: 0.4375rem;
+  padding: 0.4375rem 0.75rem;
+  border-radius: 0.875rem;
+  background: #ffffff;
+  border: 0.0625rem solid #d7e6f7;
+  font-size: 0.75rem;
+  color: #1565c0;
+}
+.scroll-bottom[data-v-fdb58938] {
+  height: 0.625rem;
+}
+
+/* ---------------- 输入区 ---------------- */
+.ai-inputbar[data-v-fdb58938] {
+  display: flex;
+  align-items: flex-end;
+  padding: 0.5rem 0.625rem;
+  background: #ffffff;
+  border-top: 0.0625rem solid #e6ecf3;
+}
+.ai-textarea[data-v-fdb58938] {
+  flex: 1;
+  min-height: 2.25rem;
+  max-height: 6.25rem;
+  padding: 0.5rem 0.625rem;
+  background: #f4f6f9;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: #333333;
+  width: auto;
+}
+.send-btn[data-v-fdb58938] {
+  margin-left: 0.5rem;
+  width: 3.75rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  background: #1e88e5;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8125rem;
+}
+.send-btn.off[data-v-fdb58938] {
+  background: #b0bec5;
+}
+.ph[data-v-fdb58938] {
+  color: #a8b4c0;
+}
+
+/* ---------------- 设置弹层 ---------------- */
+.mask[data-v-fdb58938] {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 99;
+  display: flex;
+  align-items: flex-end;
+}
+.sheet[data-v-fdb58938] {
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 0.75rem 0.75rem 0 0;
+  padding: 1rem 0.875rem 0.625rem;
+}
+.sheet-title[data-v-fdb58938] {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222222;
+}
+.sheet-tip[data-v-fdb58938] {
+  display: block;
+  margin: 0.375rem 0 0.75rem;
+  font-size: 0.6875rem;
+  line-height: 1.6;
+  color: #888888;
+}
+.field-label[data-v-fdb58938] {
+  display: block;
+  font-size: 0.75rem;
+  color: #666666;
+  margin: 0.5rem 0 0.3125rem;
+}
+.sheet-foot[data-v-fdb58938] {
+  display: block;
+  margin-top: 0.625rem;
+  font-size: 0.625rem;
+  line-height: 1.6;
+  color: #9aa7b4;
+}

@@ -1,0 +1,160 @@
+{
+  "@platforms": [
+    "android",
+    "iPhone",
+    "iPad"
+  ],
+  "id": "__UNI__DEEP2026",
+  "name": "数字生活",
+  "version": {
+    "name": "1.0.0",
+    "code": "100"
+  },
+  "description": "数字生活 —— 楷模·英雄·公益·学习·数据分析 App（uni-app Vue3 版）",
+  "developer": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "permissions": {
+    "UniNView": {
+      "description": "UniNView原生渲染"
+    }
+  },
+  "plus": {
+    "useragent": {
+      "value": "uni-app",
+      "concatenate": true
+    },
+    "splashscreen": {
+      "target": "id:1",
+      "autoclose": true,
+      "waiting": true,
+      "delay": 0
+    },
+    "popGesture": "close",
+    "launchwebview": {
+      "id": "1",
+      "kernel": "WKWebview"
+    },
+    "usingComponents": true,
+    "nvueStyleCompiler": "uni-app",
+    "compilerVersion": 3,
+    "distribute": {
+      "google": {
+        "permissions": [
+          "<uses-permission android:name=\"android.permission.INTERNET\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+          "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+          "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+          "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\"/>",
+          "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>"
+        ]
+      },
+      "apple": {
+        "dSYMs": false
+      },
+      "plugins": {
+        "audio": {
+          "mp3": {
+            "description": "Android平台录音支持MP3格式文件"
+          }
+        }
+      }
+    },
+    "statusbar": {
+      "immersed": "supportedDevice",
+      "style": "light",
+      "background": "#1E88E5"
+    },
+    "uniStatistics": {
+      "enable": false
+    },
+    "allowsInlineMediaPlayback": true,
+    "safearea": {
+      "background": "#FFFFFF",
+      "bottom": {
+        "offset": "auto"
+      }
+    },
+    "uni-app": {
+      "control": "uni-v3",
+      "vueVersion": "3",
+      "compilerVersion": "5.33",
+      "nvueCompiler": "uni-app",
+      "renderer": "auto",
+      "nvue": {
+        "flex-direction": "column"
+      },
+      "nvueLaunchMode": "normal",
+      "webView": {
+        "minUserAgentVersion": "49.0"
+      }
+    },
+    "tabBar": {
+      "position": "bottom",
+      "color": "#999999",
+      "selectedColor": "#1E88E5",
+      "borderStyle": "rgba(0,0,0,0.4)",
+      "blurEffect": "none",
+      "fontSize": "11px",
+      "iconWidth": "22px",
+      "spacing": "3px",
+      "height": "50px",
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "text": "首页",
+          "iconPath": "/static/tabbar/home.png",
+          "selectedIconPath": "/static/tabbar/home-on.png"
+        },
+        {
+          "pagePath": "pages/activity/activity",
+          "text": "公益",
+          "iconPath": "/static/tabbar/star.png",
+          "selectedIconPath": "/static/tabbar/star-on.png"
+        },
+        {
+          "pagePath": "pages/study/study",
+          "text": "心得",
+          "iconPath": "/static/tabbar/pen.png",
+          "selectedIconPath": "/static/tabbar/pen-on.png"
+        },
+        {
+          "pagePath": "pages/ai/ai",
+          "text": "AI 助手",
+          "iconPath": "/static/tabbar/ai.png",
+          "selectedIconPath": "/static/tabbar/ai-on.png"
+        },
+        {
+          "pagePath": "pages/analysis/analysis",
+          "text": "数据分析",
+          "iconPath": "/static/tabbar/chart.png",
+          "selectedIconPath": "/static/tabbar/chart-on.png"
+        }
+      ],
+      "backgroundColor": "#FFFFFF",
+      "selectedIndex": 0,
+      "shown": true
+    }
+  },
+  "app-harmony": {
+    "useragent": {
+      "value": "uni-app",
+      "concatenate": true
+    },
+    "uniStatistics": {
+      "enable": false
+    },
+    "safearea": {
+      "background": "#FFFFFF",
+      "bottom": {
+        "offset": "auto"
+      }
+    }
+  },
+  "launch_path": "__uniappview.html"
+}
