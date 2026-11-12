@@ -1,0 +1,60 @@
+/**
+ * ============================================================================
+ * uni.scss
+ * ----------------------------------------------------------------------------
+ * 全局 SCSS 变量。uni-app 会把这里的变量自动注入到每个 <style lang="scss"> 里，
+ * 所以页面样式里直接用 $dl-primary 就行，不用每个文件 @import。
+ * ============================================================================
+ */
+/* 主题色：和原项目一样用 dodgerblue，赛题 App 的主色 */
+/* 文字 */
+/* 背景 / 边框 */
+/* 语义色 */
+/* 圆角 */
+.page[data-v-3cd6ebcd] {
+  min-height: 100vh;
+  background: #f4f5f7;
+  padding-bottom: 0.625rem;
+}
+.detail-img[data-v-3cd6ebcd] {
+  height: 12.5rem;
+}
+.detail-text[data-v-3cd6ebcd] {
+  /* 详情页不限行数，全文展示 */
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+  white-space: pre-wrap;
+}
+.cmt[data-v-3cd6ebcd] {
+  margin: 0 0.625rem 0.5rem;
+}
+.cmt-body[data-v-3cd6ebcd] {
+  display: flex;
+  padding: 0.75rem;
+}
+.cmt-avatar[data-v-3cd6ebcd] {
+  width: 2.375rem;
+  height: 2.375rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: #eeeeee;
+}
+.cmt-main[data-v-3cd6ebcd] {
+  margin-left: 0.625rem;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.cmt-name[data-v-3cd6ebcd] {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #222222;
+}
+.cmt-content[data-v-3cd6ebcd] {
+  margin-top: 0.25rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: #555555;
+}
